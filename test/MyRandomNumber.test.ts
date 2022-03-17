@@ -9,7 +9,7 @@ import { MyDataFeed, MyRandomNumber, MyToken777 } from "../client/src/typechain"
 
 const { formatEther, parseEther } = ethers.utils;
 
-describe.only("MY RANDOME NUMBER", async () => {
+describe.skip("MY RANDOME NUMBER", async () => {
     let myRandomNumber: Contract | MyRandomNumber;
     let accounts = await ethers.provider.listAccounts();
     let accountA = accounts[0];

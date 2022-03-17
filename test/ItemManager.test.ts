@@ -1,6 +1,6 @@
 import { TransactionReceipt, TransactionResponse } from "@ethersproject/abstract-provider";
 import { expect } from "chai";
-import { BigNumber, Contract, ContractReceipt, ContractTransaction } from "ethers";
+import { BigNumber, Contract, ContractFactory, ContractReceipt, ContractTransaction } from "ethers";
 import { ethers, upgrades } from "hardhat";
 import Item from "../client/src/artifacts/contracts/Item.sol/Item.json";
 import { ItemManager } from "../client/src/typechain";
@@ -21,7 +21,7 @@ describe.skip("Item manager", function () {
     };
 
     it.only("Deploy upgradable  contract", async function () {
-        const item_manager_contract = await ethers.getContractFactory("ItemManager");
+        const item_manager_contract: any = await ethers.getContractFactory("ItemManager");
         ItemManager = await upgrades.deployProxy(item_manager_contract, []);
 
         console.log("ItemManager.address: ", ItemManager.address);
