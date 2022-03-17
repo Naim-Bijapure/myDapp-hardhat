@@ -1,15 +1,15 @@
 import { expect, assert } from "chai";
 import { Contract, Transaction } from "ethers";
 import { ethers, upgrades } from "hardhat";
-import { N1, N2 } from "../typechain";
+import { N1 } from "../client/src/typechain";
 
 describe.skip("N1", function () {
-    let n1: Contract | N1, n2: Contract, N2;
+    let n1: Contract | N1, n2: Contract;
     it.only("Deploy upgradable  contract", async function () {
-        const N1_contract = await ethers.getContractFactory("N1");
+        const N1_contract: any = await ethers.getContractFactory("N1");
         n1 = await upgrades.deployProxy(N1_contract, [10]);
 
-        const N2_contract = await ethers.getContractFactory("N2");
+        const N2_contract: any = await ethers.getContractFactory("N2");
         n2 = await upgrades.upgradeProxy(n1.address, N2_contract);
 
         expect(n1.address).equal(n2.address);

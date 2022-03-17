@@ -10,7 +10,7 @@ const { formatEther, parseEther } = ethers.utils;
 describe.skip("MY NFT", () => {
     let myNFT: Contract | MyNFT;
     it.only("Deploy my token  contract", async function () {
-        const myToken_contract = await ethers.getContractFactory("MyNFT");
+        const myToken_contract: any = await ethers.getContractFactory("MyNFT");
         myNFT = await myToken_contract.deploy();
         myNFT = await upgrades.deployProxy(myToken_contract, ["myNFT", "N"]);
         console.log("mytoken.address: ", myNFT.address);

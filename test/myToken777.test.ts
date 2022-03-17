@@ -16,7 +16,7 @@ describe.skip("ERC 777", async () => {
     let accountA = accounts[0];
     let accountB = accounts[1];
     it.only("Deploy my   contract", async function () {
-        const myToken_contract = await ethers.getContractFactory("MyToken777");
+        const myToken_contract: any = await ethers.getContractFactory("MyToken777");
         myToken777 = await myToken_contract.deploy();
 
         let INIT_SUPPLY = ethers.utils.parseEther("100");
@@ -33,7 +33,7 @@ describe.skip("ERC 777", async () => {
 
         // NOTE:on contract send it requires a reciepent to set
         const otherContract = await ethers.getContractFactory("Greeter");
-        let demo_contract = await otherContract.deploy("cool");
+        let demo_contract = await otherContract.deploy();
         console.log("demo_contract: ", demo_contract.address);
 
         async function getBalances() {

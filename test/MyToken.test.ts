@@ -10,7 +10,7 @@ const { formatEther, parseEther } = ethers.utils;
 describe.skip("MY TOKEN", () => {
     let myToken: Contract | MyToken;
     it.only("Deploy my token  contract", async function () {
-        const myToken_contract = await ethers.getContractFactory("MyToken");
+        const myToken_contract: any = await ethers.getContractFactory("MyToken");
         let DEFAULT_BALANCE = ethers.utils.parseEther("100");
         // myToken = await myToken_contract.deploy(DEFAULT_BALANCE);
 

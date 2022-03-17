@@ -18,7 +18,7 @@ describe.skip("MY DATA FEED", async () => {
     //     let accountB = accounts[1];
     it.only("Deploy my   contract", async function () {
         console.log("Deploy my   contract");
-        const contractInstance = await ethers.getContractFactory("MyDataFeed");
+        const contractInstance: any = await ethers.getContractFactory("MyDataFeed");
         myDataFeed = await contractInstance.deploy();
         let INIT_SUPPLY = ethers.utils.parseEther("100");
         // await singletons.ERC1820Registry(accounts[0]);
