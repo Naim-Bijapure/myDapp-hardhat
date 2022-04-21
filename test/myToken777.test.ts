@@ -33,7 +33,7 @@ describe.skip("ERC 777", async () => {
 
         // NOTE:on contract send it requires a reciepent to set
         const otherContract = await ethers.getContractFactory("Greeter");
-        let demo_contract = await otherContract.deploy();
+        let demo_contract = await otherContract.deploy("cool");
         console.log("demo_contract: ", demo_contract.address);
 
         async function getBalances() {

@@ -3,7 +3,7 @@ import { expect } from "chai";
 import { ContractTransaction } from "ethers";
 import { ethers } from "hardhat";
 
-describe("My proxy ", function () {
+describe.skip("My proxy ", function () {
     it.only("deploy my proxy and check", async function () {
         const Example_Contract = await ethers.getContractFactory("Example");
         const example = await Example_Contract.deploy();

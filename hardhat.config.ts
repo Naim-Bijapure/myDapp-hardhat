@@ -31,10 +31,10 @@ const config: HardhatUserConfig = {
     defaultNetwork: "hardhat",
 
     networks: {
-        ropsten: {
-            url: "https://ropsten.infura.io/v3/d7d49f3bcbd943b6bceb4a7549cd1bb0",
-            accounts: ["d8bc935f06c027c7e0edeedcc46593554dbb3e9e01101f4f3b8ab69e36e2e484"],
-        },
+        // ropsten: {
+        //     url: "",
+        //     accounts: [""],
+        // },
 
         ganache: {
             url: process.env.GANACHE_UI || "",
@@ -54,8 +54,8 @@ const config: HardhatUserConfig = {
         //     },
         // },
         rinkeby: {
-            url: "https://rinkeby.infura.io/v3/d7d49f3bcbd943b6bceb4a7549cd1bb0", //Infura url with projectId
-            accounts: ["d8bc935f06c027c7e0edeedcc46593554dbb3e9e01101f4f3b8ab69e36e2e484"],
+            url: process.env.STAGING_ALCHEMY_KEY,
+            accounts: [process.env.PRIVATE_KEY as string],
         },
     },
     gasReporter: {

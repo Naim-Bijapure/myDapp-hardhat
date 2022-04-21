@@ -1,17 +1,17 @@
 //SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
+
 // import "hardhat/console.sol";
 
 contract Greeter {
     string private greeting;
 
-    // constructor(string memory _greeting) {
-        constructor() {
-        // greeting = _greeting;
+    constructor(string memory _greeting) {
+        // constructor() {
+        greeting = _greeting;
     }
 
     function greet() public view returns (string memory) {
-
         return greeting;
     }
 

@@ -16,12 +16,11 @@ async function main() {
     let txn = await nftContract.makeAnEpicNFT();
     // Wait for it to be mined.
     await txn.wait();
-    console.log("Minted NFT #1");
 
+    // Mint another NFT for fun.
     txn = await nftContract.makeAnEpicNFT();
     // Wait for it to be mined.
     await txn.wait();
-    console.log("Minted NFT #2");
 }
 
 // We recommend this pattern to be able to use async/await everywhere
